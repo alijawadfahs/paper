@@ -1,0 +1,128 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+
+\title{Paper Outline / Road Map }
+\author{LIG - Verimag}
+
+\begin{document}
+
+\maketitle
+\section{Abstract}
+ we will keep it to the end. 
+
+\section{Introduction}
+\subsection{General intoduction} 
+
+\begin{itemize}
+  \item IEEE 802.15.4 overview (1 paragraph).
+  \item TSCH Table Structure.
+  \item 6top protocol and cell reservation.
+\end{itemize}
+
+ 
+\subsection{The project objectives and Results}
+
+\begin{itemize}
+  \item Randomity of cell selection in 6 top.
+  \item Identifying the problem.(collision in the Dedicated cells of the TSCH tables between neighbor nodes)
+  \item The suggested solution. (local mutual execlusion while reserving cells using 6top protocol)
+\end{itemize}
+
+\section{Background}
+\subsection{6top cell reservation}
+\begin{itemize}
+  \item The rule of 6top.
+  \item 2-step 6top Transaction
+  \item 3-step 6top Transaction
+  \item The communication of the cell reservation and deletion in the shared slot. 
+  \end{itemize}
+\subsection{filtering of the RX at the mac sublayer}
+currently reading for This section \textbf{\textit{to be updated soon}}
+\subsection{The concept of collision, hidden and exposed terminal.}
+(collision only occurs at the reception)
+\section{Proposed Mechanism}
+\begin{itemize}
+  \item The new created structure that will reserve the cells taken by the neighbors. 
+  \item The use of the cell reservation Response to update the created structure.
+  \item An schematics to explain the problem and the solution.
+  \item Why we need to buffer the reserved cells , and how it's going to improve our approach. 
+  \item The calculation of the buffer length. 
+  \item The used value and why it fits the topologies.
+  \end{itemize}
+\section{Results}
+\textbf{\textit{to be discussed with the supervisor, I will supply many options for the representions to choose the best fit for us}}
+\section{Related Work}
+\begin{itemize}
+  \item The work done by Muraoka et al (the simulator creators), \textit{"6 Top Housekeeping"} 
+  \item The work done by Phan Duy et al , a paper published in 22/03/2017 dealed with the same problem we are trying to solve.(I will supply you with the paper)
+  \item Compariasno between Housekeeping and our approach.
+  \end{itemize}  
+\section{Conclusion}
+  we will keep it to the end.
+
+
+\begin{thebibliography}{1}
+
+\bibitem{IEEEhowto:kopka}
+Q.Wang, and X. Vilajosana, \emph{ 6top Protocol (6P). Internet Engineering Task Force, Tech. Rep. draft-ietf-6tisch-6top-protocol-00 } \hskip 1em plus
+0.5em minus 0.4em\relax https://tools.ietf.org/html/draft-ietf-6tisch-6top-protocol-00 , April 2016.
+
+\bibitem{IEEEhowto:kopka}
+T. Watteyne et al, \emph{ Using IEEE 802.15.4e Time-Slotted Channel Hopping (TSCH) in the Internet of Things (IoT): Problem Statement } \hskip 1em plus
+  0.5em minus 0.4em\relax https://tools.ietf.org/html/rfc7554 , May 2015.
+
+\bibitem{IEEEhowto:kopka}
+T. Winter et al, \emph{ RPL: IPv6 Routing Protocol for Low-Power and Lossy Networks } \hskip 1em plus
+  0.5em minus 0.4em\relax https://tools.ietf.org/html/rfc6550 , March 2012.
+
+\bibitem{IEEEhowto:kopka}
+D. Dujovne et al, \emph{6tisch: deterministic ip-enabled industrial internet(of things)} \hskip 1em plus
+  0.5em minus 0.4em\relax IEEE Communications Magazine — Communications Standards Supplement ,December 2014.
+  
+\bibitem{IEEEhowto:kopka}
+J. Tripathi et al, \emph{A Performance Evaluation Study of RPL: Routing Protocol for Low Power and Lossy Networks} \hskip 1em plus
+  0.5em minus 0.4em\relax  Information Sciences and Systems (CISS), 44th Annual Conference on (pp. 1-6). IEEE , March 2010.
+
+\bibitem{IEEEhowto:kopka}
+F. Theoleyre and G. Papadopoulos, \emph{Experimental Validation of a Distributed Self-Configured 6TiSCH with Traffic Isolation in Low Power Lossy Networks} \hskip 1em plus
+  0.5em minus 0.4em\relax  Proceedings of the 19th ACM International Conference on Modeling, Analysis and Simulation of Wireless and Mobile Systems (pp. 102-110). ACM , November 2017.
+  
+\bibitem{IEEEhowto:kopka}
+N. Accettura et al, \emph{A Decentralized Traffic Aware Scheduling in 6TiSCH Networks: Design and Experimental Evaluation} \hskip 1em plus
+  0.5em minus 0.4em\relax   IEEE Internet of Things Journal, 2(6), 455-470 , December 2015.
+  
+\bibitem{IEEEhowto:kopka}
+M. R. Palattella et al, \emph{On-the-Fly Bandwidth Reservation for 6TiSCH Wireless Industrial Networks} \hskip 1em plus
+  0.5em minus 0.4em\relax  IEEE Sensors Journal, 16(2), 550-560,  September 2015.
+  
+\bibitem{IEEEhowto:kopka}
+M. R. Palattella et al, \emph{Traffic Aware Scheduling Algorithm for Reliable Low-Power Multi-Hop IEEE 802.15.4e Networks} \hskip 1em plus
+  0.5em minus 0.4em\relax  IEEE 23rd International Symposium on Personal, Indoor and Mobile Radio Communications - (PIMRC),  September 2012.
+ 
+\bibitem{IEEEhowto:kopka}
+N. Accettura et al, \emph{Decentralized Traffic Aware Scheduling for Multi-hop Low Power Lossy Networks in the Internet of Things} \hskip 1em plus
+  0.5em minus 0.4em\relax   In World of Wireless, Mobile and Multimedia Networks (WoWMoM), 2013 IEEE 14th International Symposium and Workshops on a (pp. 1-6). IEEE,  June 2013.
+ 
+\bibitem{IEEEhowto:kopka}
+S. Duquennoy et al, \emph{Orchestra: Robust Mesh Networks Through Autonomously Scheduled TSCH} \hskip 1em plus
+  0.5em minus 0.4em\relax  Proceedings of the 13th ACM Conference on Embedded Networked Sensor Systems (pp. 337-350). ACM, November 2015.
+
+\bibitem{IEEEhowto:kopka}
+K. Muraoka et al, \emph{Simple Distributed Scheduling With Collision Detection in TSCH Networks} \hskip 1em plus
+  0.5em minus 0.4em\relax  IEEE Sensors Journal, 16(15), 5848-5849,  May 2016.
+  
+\bibitem{IEEEhowto:kopka}
+L. Lamport, \emph{Time, clocks, and the ordering of events in a distributed system} \hskip 1em plus
+  0.5em minus 0.4em\relax  Communications of the ACM, 21(7), 558-565, July 1978.
+  
+\bibitem{IEEEhowto:kopka}
+T. P. Duy , \emph{Distributed cell selection for scheduling function in 6TiSCH networks} \hskip 1em plus
+0.5em minus 0.4em\relax Computer Standards and Interfaces, 53, 80-88, March 2017.
+
+\end{thebibliography}
+
+\medskip
+
+
+
+\end{document}

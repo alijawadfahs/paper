@@ -1,0 +1,57 @@
+introduction first point
+ 
+our world have been shifted from the state of having limited number of expensive computers with high performance processing units to a world with enormous number of  cheap entities with limited processing capabilities that we call things,basically this was the basis of IoT . A source of communication between those entities was required which led us to create IEEE 802.15.4 .
+
+IEEE 802.15.4  standard was created to offer the lower network layers (PHY and MAC) for a low cost and low speed communication, the contribution of this standard wasn’t limited to the reduction of the power consumption but also this standard used techniques to reduced  the manufacturing costs. All of this was achieved while keeping good reliability in the network. 
+
+In 2012 the work of IETF (Internet Engineering Task Force) was approved, and the TSCH (Time-Slotted Channel Hopping) was added to media access layer of IEEE 802.15.4e. TSCH is Time-slotted where we have a periodic slot-frame that will repeat itself every specific period , this slot-frame is split into time-slots enough to send the maximum frame length from node TX to node RX while assuring synchronization between nodes. Also TSCH uses channel hopping , where the bandwidth is split over multi channels, More nodes can communicate at the same time-slot using different channels identified by different channel offsets. Two nodes willing to communicate will pick up a cell from the TSCH table , this cell is defined by the number of time-slot (0→slot-frame length) and channel offset, we have to distinguish two types of TSCH cells : the shared cells where all the nodes are listening or sending, and the dedicated cells for a specific communication between two neighbor nodes . 
+
+Since we are speaking about millions of nodes, sensors, things that should be connected to the Internet large scaling capabilities is required that induce the merging of  IPv6  with the already existing IEEE 802.15.4e TSCH, this was the focus of IETF Working Group by creating 6TiSCH architecture to enable IPv6 over TSCH.
+
+
+
+
+**************** image of the abstraction layers of WSN *********************
+
+
+
+
+In this paper we are concerned about the 6TiSCH operation sublayer (6top) that  allow neighbor nodes to add/delete TSCH dedicated cells and also we are concerned about the scheduling function which’s responsible for selecting the cells to assign for nodes  . Since we are working in a distributed system where we have no centralized entities to monitor the whole network  the resource allocation process of adding or deleting cells is done locally using the communication between the neighbor  nodes in the shared cells.
+
+introduction second  point 
+
+The scheduling function in 6top is responsible for selecting cells from the TSCH schedule to be assigned to the pair of nodes asking for new communication cells , this process have to take into consideration many factors like latency on the end-to-end transmission and the probability of collision, most of the existing scheduling functions use random selection of the cells taking to account only the cells used by the Tx and Rx nodes. As far as we know none of the implemented scheduling function took into account the cells reserved by the neighbors in a fully distributed system mainly because the communication with the non-related neighbors is not configured. 
+
+Since the selected cells by the nodes is ignoring  the cells reserved by the neighbors, the network is not immune from collision in the dedicated such that two neighbor nodes can select the same cell that leads to collision and the drop of one of the sent packets or both of them. Our work and contributions through this paper is to improve and solve the problem of collision between neighbor nodes in dedicated cells. 
+
+  Our solution is based on taking the neighbor nodes reserved cells into account when reserving a new cells ,  since we are working in a distributed system where all the information a node knows about the network is just the information of it’s parent,children and itself and communication is limited also to the parent and children which made the problem more challenging and less straightforward, more over we have to take the latency and the contention in the shared slot into account while implementing our approach.
+
+The solution implemented by us have  shown a reduction of 66% in the number of collided Tx cells, and … % reduction of the number collided packets , in addition of the reduction of the interference in the network. 
+
+The main contributions of our papers are : 
+
+1- implementing a way to collect and reserve the reserved cells by neighbor without introducing any overhead to the network. 
+
+
+
+2- update in the way 6top add and delete cells
+
+
+
+3- scheduling function that takes the reserved cells by the neighbor into account. 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
